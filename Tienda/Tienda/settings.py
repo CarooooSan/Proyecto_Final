@@ -76,11 +76,22 @@ WSGI_APPLICATION = 'Tienda.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
+    
+    #'default': {
+        #'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': BASE_DIR / 'db.sqlite3',
+        
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'agenda',
+        'USER': 'postgres',  # Corregido el nombre de usuario
+        'PASSWORD': '123456789',
+        'HOST': 'localhost',
+        'PORT': '',  # Puedes dejarlo en blanco o configurar un puerto específico
     }
 }
+
+    
 
 
 # Password validation
@@ -125,3 +136,14 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#Servidor de correo
+#EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
+#EMAIL_HOST ='smtp.gmail.com'
+#EMAIL_PORT = 587
+#EMAIL_USE_TLS = True
+#EMAIL_HOST_USER = 'carolsancay21605@gmail.com'
+#EMAIL_HOST_PASSWORD = 'zkvq npsb otjx nprs'
+
+#Configuracion opcional del correo
+#DEFAULT_FROM_EMAIL = 'carolsancay21605@gmail.com'
